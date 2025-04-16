@@ -16,10 +16,10 @@ npm (comes with Node.js)
 ---
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/fr44lancer/demo-simple-api.git
+git clone https://github.com/fr44lancer/demo-simple-api-consumer.git
 ```
 ```bash
-cd demo-simple-api
+cd demo-simple-api-consumer
 ```
 ```bash
 npm install
