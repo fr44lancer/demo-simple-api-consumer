@@ -26,7 +26,7 @@ npm install
 ```
 
 ### 2. Environment Setup
-Copy example env and configure your MySQL DB:
+Copy example env and configure env
 ```bash
 cp .env.example .env
 ```
