@@ -1,4 +1,4 @@
-# Public Registry API producer/consumer Demo App
+# Public Registry API consumer Demo App
 
 A  demo app for simulating a public registry platform using  mock data. Features include producing and consuming 
 REST APIs for persons, addresses, and  documents
@@ -12,10 +12,6 @@ To run this project locally, make sure you have the following installed:
 Node.js v18 or higher – https://nodejs.org
 
 npm (comes with Node.js)
-
-MySQL 8.x (or compatible) – https://www.mysql.com
-
-You will also need to configure a local database and connection string.
 
 ---
 ### 1. Clone & Install

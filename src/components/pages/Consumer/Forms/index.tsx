@@ -3,7 +3,6 @@
 
 import {useState} from 'react';
 import {Alert, Button, Input, Tabs, Typography} from 'antd';
-import DownloadSpecButton from "@/components/pages/Consumer/DownloadSpecButton";
 import ConsumerApi from "@/utils/ConsumerApi";
 
 const {TextArea} = Input;
@@ -77,7 +76,6 @@ export default function ApiConsumerPanel() {
     return (
         <div className="p-4 border rounded-md bg-white p-10 mt-10">
             <Title level={4}>Try API Endpoints</Title>
-            <DownloadSpecButton/>
             <Tabs
                 defaultActiveKey={activeTab}
                 onChange={setActiveTab}
