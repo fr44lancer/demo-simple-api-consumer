@@ -4,6 +4,7 @@
 import {useState} from 'react';
 import {Alert, Button, Input, Tabs, Typography} from 'antd';
 import ConsumerApi from "@/utils/ConsumerApi";
+import InternalApi from "@/utils/InternalApi";
 
 const {TextArea} = Input;
 const {Title, Paragraph} = Typography;
@@ -12,7 +13,7 @@ const tabs = [
     {
         key: 'get-person-by-psn',
         label: 'Search by psn',
-        endpoint: '/api/v1/get-person-by-psn?psn=XXXX',
+        endpoint: '/v1/get-person-by-psn?psn=XXXX',
         method: 'GET',
         form: ({onSubmit}: { onSubmit: (psn: string) => void }) => (
             <Input.Search
@@ -25,7 +26,7 @@ const tabs = [
     {
         key: 'persons',
         label: 'All Persons',
-        endpoint: '/api/v1/persons',
+        endpoint: '/v1/persons',
         method: 'GET',
         form: ({onSubmit}: { onSubmit: () => void }) => (
             <Button onClick={onSubmit}>Fetch Persons</Button>
@@ -34,7 +35,7 @@ const tabs = [
     {
         key: 'addresses',
         label: 'All Addresses',
-        endpoint: '/api/v1/addresses',
+        endpoint: '/v1/addresses',
         method: 'GET',
         form: ({onSubmit}: { onSubmit: () => void }) => (
             <Button onClick={onSubmit}>Fetch Addresses</Button>
@@ -54,13 +55,13 @@ export default function ApiConsumerPanel() {
 
         const url =
             activeTab === 'get-person-by-psn'
-                ? `/api/v1/get-person-by-psn?psn=${param}`
+                ? `/v1/get-person-by-psn?psn=${param}`
                 : current.endpoint;
 
         setLoading(true);
         setError(null);
         try {
-            const res = await ConsumerApi.get(url);
+            const res = await InternalApi.get(url);
             const data = res.data;
             console.log('data')
             console.log(data)
