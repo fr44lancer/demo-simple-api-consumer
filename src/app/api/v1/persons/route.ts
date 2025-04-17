@@ -6,6 +6,7 @@ import ConsumerApi from "@/utils/ConsumerApi";
 const allowedOrigin = '*'; // or '*' if you want to allow all
 
 const corsHeaders = {
+    'Access-Control-Allow-Origin': allowedOrigin,
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-ROAD-CLIENT',
 };
