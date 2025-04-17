@@ -20,7 +20,13 @@ export async function OPTIONS() {
 
 export async function GET(req: NextRequest) {
     try {
-        const res = await ConsumerApi.get('/api/v1/get-person-by-psn');
+        const { searchParams } = new URL(req.url);
+        const psn = searchParams.get('psn');
+        if (!psn) {
+            return NextResponse.json({ error: 'Missing psn' }, { status: 400 });
+        }
+        const res = await ConsumerApi.get(`/api/v1/get-person-by-psn?psn=${psn}`);
+
         return new NextResponse(JSON.stringify(res.data), {
             status: 200,
             headers: corsHeaders,
