@@ -6,6 +6,7 @@ const ConsumerApi: AxiosInstance = axios.create({
     headers: {
         'Content-Type': 'application/json',
         'X-Road-Client': process.env.NEXT_PUBLIC_X_ROAD_CLIENT_HEADER_VALUE,
+        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
     },
 });
 

@@ -25,13 +25,14 @@ export async function GET(req: NextRequest) {
         if (!psn) {
             return NextResponse.json({ error: 'Missing psn' }, { status: 400 });
         }
-        const res = await ConsumerApi.get(`/api/v1/get-person-by-psn?psn=${psn}`);
+        const res = await ConsumerApi.get(`/consumer/person/psn/${psn}`);
 
         return new NextResponse(JSON.stringify(res.data), {
             status: 200,
             headers: corsHeaders,
         });
     } catch (error: any) {
+        console.log(error)
         console.error('X-Road call failed:', error?.response?.data || error.message);
         return new NextResponse(
             JSON.stringify({ error: 'Failed to fetch data from consumer API' }),
